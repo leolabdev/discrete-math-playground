@@ -5,6 +5,8 @@
  * Formal: A △ B = (A \\ B) ∪ (B \\ A)
  */
 export function symmetricDifference<T>(A: Set<T>, B: Set<T>): Set<T> {
-  // TODO: implement
-  throw new Error('Not implemented');
+  return new Set([
+      ...[...A].filter(a => !B.has(a)),
+      ...[...B].filter(b => !A.has(b)),
+      ])
 }
