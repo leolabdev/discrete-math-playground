@@ -8,6 +8,12 @@
 export type Pair<A, B> = [A, B];
 
 export function cartesianProduct<A, B>(A: Set<A>, B: Set<B>): Set<Pair<A, B>> {
-  // TODO: implement
-  throw new Error('Not implemented');
+  const result = new Set<Pair<A, B>>();
+  for (const a of A) {
+    for (const b of B) {
+      result.add([a, b]);
+    }
+  }
+
+  return result;
 }
